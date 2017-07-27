@@ -1,8 +1,6 @@
 package entities;
 import java.util.*;
 
-
-
 public class Person {
 	private String name;
 	private boolean is_female;
@@ -43,6 +41,10 @@ public class Person {
 		job = "not assigned";
 		//birthday = ;
 	}
-	public void set_name(String _name) {name = _name;}
-	public String get_name() {return name;}
+	public void setName(String _name) {name = _name;}
+	public String getName() {return name;}
+	public void setHouseName(String _house_name) {house_name = _house_name;}
+	public String getHouseName() {return house_name;}
+	public void setSchool(String _school) {school = _school;}
+	public String getSchool() {return school;}
 }
