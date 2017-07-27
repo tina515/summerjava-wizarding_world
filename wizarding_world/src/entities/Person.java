@@ -47,4 +47,7 @@ public class Person {
 	public String getHouseName() {return house_name;}
 	public void setSchool(String _school) {school = _school;}
 	public String getSchool() {return school;}
+	public void setBloodStatus(String status) {blood_status = status;}
+	public String getBloodStatus() {return blood_status;}
+	
 }

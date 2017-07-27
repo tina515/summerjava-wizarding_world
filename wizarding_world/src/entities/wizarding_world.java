@@ -7,8 +7,8 @@ public class wizarding_world {
 		Person harry = new Person("harry");
 		harry.setSchool("hogwarts");
 		harry.setHouseName("gryffendor");
-		System.out.println(harry.getSchool());
-		System.out.println(harry.getHouseName());
+		harry.setBloodStatus("pure blood");
+		System.out.println(harry.getBloodStatus());
 	}
 
 }
