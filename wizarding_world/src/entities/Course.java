@@ -35,4 +35,7 @@ public class Course {
 	public String getName() {return name;}
 	public char getMinGrade() { return minGrade;}
 	public void setMinGrade(char _grade) { minGrade = _grade;}
+	public void setProfessorName(String _name) { professorName = _name;}
+	public String getProfessorName() {return professorName;}
 }
+
