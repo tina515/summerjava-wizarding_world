@@ -64,4 +64,6 @@ public class School {
 	public boolean getHoused() {return housed;}
 	public void setHouseNames(ArrayList<String> _houseNames) {houseNames = _houseNames;}
 	public ArrayList <String> getHouseNames() { return houseNames;}
+	public void setCourseNames(ArrayList <String> _courseNames) { courseNames  = _courseNames;}
+	public ArrayList getCourseNames() { return courseNames;}
 }
