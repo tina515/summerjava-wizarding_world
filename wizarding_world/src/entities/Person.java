@@ -49,5 +49,6 @@ public class Person {
 	public String getSchool() {return school;}
 	public void setBloodStatus(String status) {blood_status = status;}
 	public String getBloodStatus() {return blood_status;}
-	
+	public void setJob(String _job) {job = _job;}
+	public String getJob() {return job;}
 }
