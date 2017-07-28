@@ -37,5 +37,7 @@ public class Course {
 	public void setMinGrade(char _grade) { minGrade = _grade;}
 	public void setProfessorName(String _name) { professorName = _name;}
 	public String getProfessorName() {return professorName;}
+	public Vector<String> getStudentNames() { return studentNames;}
+	public void setStudentNames(Vector<String> names) { studentNames = names;}
 }
 
