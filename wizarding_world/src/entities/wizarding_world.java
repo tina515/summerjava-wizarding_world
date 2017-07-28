@@ -5,13 +5,13 @@ public class wizarding_world {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Vector<String> professors = new Vector<String>();
-		professors.add("Severus Snape");
-		professors.add("Albus Dumbledore");
-		professors.add("Minerva McGonnagol");
-		School hogwarts = new School("Hogwarts");
-		hogwarts.setProfessorNames(professors);
-		System.out.println(hogwarts.getProfessorNames());
+		Course flying = new Course("flying", "Madame Hooch", 'O', 1996);
+		System.out.println(flying.getName());
+		System.out.println(flying.getMinGrade());
+		flying.setName("professional flying");
+		flying.setMinGrade('5');
+		System.out.println(flying.getName());
+		System.out.println(flying.getMinGrade());
 	}
 
 }
