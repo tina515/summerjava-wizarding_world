@@ -68,4 +68,6 @@ public class School {
 	public ArrayList getCourseNames() { return courseNames;}
 	public void setStudentNames(Vector <String> _names) {studentNames = _names;}
 	public Vector <String> getStudentNames() { return studentNames;}
+	public void setProfessorNames(Vector <String> _names) {professorNames = _names;}
+	public Vector <String> getProfessorNames() { return professorNames;}
 }
