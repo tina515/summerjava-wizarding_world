@@ -36,7 +36,7 @@ public class Person {
 		name = _name;
 		is_female = false;
 		house_name = "not defined";
-		blood_status = "not defined";
+		blood_status = "not assigned";
 		school = "not defined";
 		job = "not assigned";
 		//birthday = ;

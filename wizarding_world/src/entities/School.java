@@ -20,12 +20,13 @@ public class School {
 		courseNames = null;
 		schoolPrinciple = "";
 	}
-	public School(String _name, ArrayList<String> _houseNames,ArrayList<String> _courseNames,boolean _housed
+	
+	public School(String _name, ArrayList<String> _houseNames,ArrayList<String> _courseNames
 			,Vector<String> _studentNames, Vector<String> _professorNames)
 	{
 		name = _name;
-		numOfStudents = 0;
-		housed = _housed;
+		numOfStudents = _studentNames.size();
+		housed = true;
 		houseNames = _houseNames;
 		studentNames = _studentNames;
 		professorNames = _professorNames;
@@ -65,9 +66,9 @@ public class School {
 	public void setHouseNames(ArrayList<String> _houseNames) {houseNames = _houseNames;}
 	public ArrayList <String> getHouseNames() { return houseNames;}
 	public void setCourseNames(ArrayList <String> _courseNames) { courseNames  = _courseNames;}
-	public ArrayList getCourseNames() { return courseNames;}
+	public ArrayList<String> getCourseNames() { return courseNames;}
 	public void setStudentNames(Vector <String> _names) {studentNames = _names;}
 	public Vector <String> getStudentNames() { return studentNames;}
 	public void setProfessorNames(Vector <String> _names) {professorNames = _names;}
-	public Vector <String> getProfessorNames() { return professorNames;}
+	public Vector<String> getProfessorNames() { return professorNames;}
 }
