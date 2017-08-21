@@ -4,6 +4,7 @@ import entities.*;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 public class SchoolService {
@@ -79,5 +80,50 @@ public class SchoolService {
 			System.out.println("not done");
 		}
 	}
-
+	public void setData()
+	{
+		try{
+		    PrintWriter writer = new PrintWriter("schoolDB_setdata.txt", "UTF-8");
+		    //writer.println("The first line");
+		    for(int i = 0 ; i< allSchools.size() ; i++)
+		    {
+		    		String name = allSchools.get(i).getName();
+		    		writer.println(name);
+		    		if(allSchools.get(i).getHoused())
+		    		{
+		    			for(int j = 0 ; j<allSchools.get(i).getHouses().size() ; j++)
+		    			{
+		    				String houseName = allSchools.get(i).getHouses().get(j).getName();
+		    				writer.println(houseName);
+		    			}
+		    		}
+		    		else
+		    		{
+		    			writer.println("N/A");
+		    		}
+		    		for(int j = 0 ; j< allSchools.get(i).getNumOfStudents() ; j++)
+		    		{
+		    			String studentName = allSchools.get(i).getStudents().get(j).getName();
+		    			writer.println(studentName);
+		    		}
+		    		for(int j = 0 ; j<allSchools.get(i).getProfessors().size() ; j++)
+		    		{
+		    			String professorName = allSchools.get(i).getProfessors().get(j).getName();
+		    			writer.println(professorName);
+		    		}
+		    		for(int j = 0 ; j<allSchools.get(i).getCourses().size() ; j++)
+		    		{
+		    			String courseName = allSchools.get(i).getCourses().get(j).getName();
+		    			writer.println(courseName);
+		    		}
+		    		String location = allSchools.get(i).getLocation();
+		    		writer.println(location);
+		    		writer.println("*");
+		    }
+		    writer.println("$");
+		    writer.close();
+		} catch (IOException e) {
+		   System.out.println("not done");
+		}
+	}
 }
