@@ -1,74 +1,106 @@
 package entities;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Vector;
+
 public class School {
-	private String name;
-	private int numOfStudents;
-	private boolean housed;
-	private ArrayList<String> houseNames;
-	private Vector<String> studentNames;
-	private Vector<String> professorNames;
-	private ArrayList<String> courseNames;
-	private String schoolPrinciple;
-	public School(String _name)
+	private String _name;
+	private int _numOfStudents;
+	private boolean _housed;
+	private ArrayList<House> _houses;
+	private Vector<Student> _students;
+	private Vector<Professor> _professors;
+	private ArrayList<Course> _courses;
+	private String _location;
+	
+	/*			CONSTRUCTORS			*/
+	/*				GETTERS				*/
+	/*				SETTERS				*/
+	/*			HELPER METHODS			*/
+
+	
+	public School(String name, int numOfStudents, boolean housed, ArrayList<House> houses,
+			Vector<Student> students, Vector<Professor> professors, ArrayList<Course> courses, String location)
 	{
-		name = _name;
-		numOfStudents = 0;
-		housed = false;
-		houseNames = null;
-		studentNames = null;
-		professorNames = null;
-		courseNames = null;
-		schoolPrinciple = "";
+		_name = name;
+		_numOfStudents = numOfStudents;
+		_housed = housed;
+		_houses = houses;
+		_students = students;
+		_professors = professors;
+		_courses = courses;
+		_location = location;
+				
+	}
+	public School(String name, boolean housed, String location)
+	{
+		this(name, 0, housed, new ArrayList<House>(), 
+				new Vector<Student>(), new Vector<Professor>(), new ArrayList<Course>(), location);
 	}
 	
-	public School(String _name, ArrayList<String> _houseNames,ArrayList<String> _courseNames
-			,Vector<String> _studentNames, Vector<String> _professorNames)
+	public void setName(String name)
 	{
-		name = _name;
-		numOfStudents = _studentNames.size();
-		housed = true;
-		houseNames = _houseNames;
-		studentNames = _studentNames;
-		professorNames = _professorNames;
-		courseNames = _courseNames;
-		schoolPrinciple = "";
+		_name = name;
 	}
-	public School(String _name, int _numOfStudents, boolean _housed, ArrayList<String> _houseNames
-			,Vector<String> _studentNames, Vector<String> _professorNames,
-				ArrayList<String> _courseNames , String _principle)
+	public void setNumOfStudents(int numOfStudents)
 	{
-		name = _name;
-		numOfStudents = _numOfStudents;
-		housed = _housed;
-		houseNames = _houseNames;
-		studentNames = _studentNames;
-		professorNames = _professorNames;
-		courseNames = _courseNames;
-		schoolPrinciple = _principle;
-	}	
-	public School(String _name, int _numOfStudents, boolean _housed, ArrayList<String> _houseNames
-			,Vector<String> _studentNames, Vector<String> _professorNames,
-				ArrayList<String> _courseNames)
-	{
-		name = _name;
-		numOfStudents = _numOfStudents;
-		housed = _housed;
-		houseNames = _houseNames;
-		studentNames = _studentNames;
-		professorNames = _professorNames;
-		courseNames = _courseNames;
-		schoolPrinciple = "";
+		_numOfStudents = numOfStudents;			
 	}
-	public void setName(String _name) { name = _name;}
-	public String getName() { return name;}
-	public void setHoused(boolean _housed) {housed = _housed;}
-	public boolean getHoused() {return housed;}
-	public void setHouseNames(ArrayList<String> _houseNames) {houseNames = _houseNames;}
-	public ArrayList <String> getHouseNames() { return houseNames;}
-	public void setCourseNames(ArrayList <String> _courseNames) { courseNames  = _courseNames;}
-	public ArrayList<String> getCourseNames() { return courseNames;}
-	public void setStudentNames(Vector <String> _names) {studentNames = _names;}
-	public Vector <String> getStudentNames() { return studentNames;}
-	public void setProfessorNames(Vector <String> _names) {professorNames = _names;}
-	public Vector<String> getProfessorNames() { return professorNames;}
+	public void setHoused(boolean housed)
+	{
+		_housed = housed;
+	}
+	public void setHouses(ArrayList<House> houses)
+	{
+		_houses = houses;
+	}
+	public void setStudents(Vector<Student> students)
+	{
+		_students = students;
+	}
+	public void setProfessors(Vector<Professor> professors)
+	{
+		_professors = professors;
+	}
+	public void setCourses(ArrayList<Course> courses)
+	{
+		_courses = courses;
+	}
+	public void setLocation(String location)
+	{
+		_location = location;
+	}
+	public String getName()
+	{ 
+		return _name;
+	}
+	public int getNumOfStudents()
+	{
+		return _numOfStudents;
+	}
+	public boolean getHoused()
+	{
+		return _housed;
+	}
+	public ArrayList<House> getHouses()
+	{
+		return _houses;
+	}
+	public Vector<Student> getStudents()
+	{
+		return _students;
+	}
+	public Vector<Professor> getProfessors()
+	{
+		return _professors;
+	}
+	public ArrayList<Course> getCourses()
+	{
+		return _courses;
+	}
+	public String getLocation()
+	{
+		return _location;
+	}
+
 }

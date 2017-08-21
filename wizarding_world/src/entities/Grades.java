@@ -1,5 +1,9 @@
 package entities;
 
 public enum Grades {
- O, E, A,P,D,T
+	O, /* Outstanding */
+	E, /* Exceeds Expectations */
+	A, /* Acceptable */
+	P, /* Poor */
+	T; /* Troll */
 }

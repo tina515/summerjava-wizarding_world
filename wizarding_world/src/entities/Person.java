@@ -1,54 +1,73 @@
 package entities;
-import java.util.*;
 
 public class Person {
-	private String name;
-	private boolean is_female;
-	private String house_name;
-	private String blood_status;
-	private String school;
-	private String job;
-	private Date birthday;
-	public Person(String _name,boolean _is_female , String _house_name , 
-			String _blood_status , String _school ,String _job, Date _birthday)
+	protected String _name;
+	protected House _house;
+	protected BloodStatus _bloodStatus;
+	protected School _school;
+	protected String _birthday;
+	
+	/*			CONSTRUCTORS			*/
+	public Person(String name, House house, BloodStatus bloodStatus, School school, String birthday)
 	{
-		name = _name;
-		is_female = _is_female;
-		house_name = _house_name;
-		blood_status = _blood_status;
-		school = _school;
-		job = _job;
-		birthday = _birthday;
+		_name = name;
+		_house = house;
+		_bloodStatus = bloodStatus;
+		_school = school;
+		_birthday = birthday;
 	}
-	public Person(String _name , String _house_name , 
-			String _blood_status , String _school ,Date _birthday)
+	public Person(String name)
 	{
-		name = _name;
-		is_female = false;
-		house_name = _house_name;
-		blood_status = _blood_status;
-		school = _school;
-		job = "not assigned";
-		birthday = _birthday;
+		this(name, null, BloodStatus.Muggle, null, "");
 	}
-	public Person(String _name)
+	public Person()
 	{
-		name = _name;
-		is_female = false;
-		house_name = "not defined";
-		blood_status = "not assigned";
-		school = "not defined";
-		job = "not assigned";
-		//birthday = ;
+		this("", null, BloodStatus.Muggle, null, "");
 	}
-	public void setName(String _name) {name = _name;}
-	public String getName() {return name;}
-	public void setHouseName(String _house_name) {house_name = _house_name;}
-	public String getHouseName() {return house_name;}
-	public void setSchool(String _school) {school = _school;}
-	public String getSchool() {return school;}
-	public void setBloodStatus(String status) {blood_status = status;}
-	public String getBloodStatus() {return blood_status;}
-	public void setJob(String _job) {job = _job;}
-	public String getJob() {return job;}
+	
+	/*				GETTERS				*/
+	public String getName()
+	{
+		return _name;
+	}
+	public House getHouse()
+	{
+		return _house;
+	}
+	public BloodStatus getBloodStatus()
+	{
+		return _bloodStatus;
+	}
+	public School getSchool()
+	{
+		return _school;
+	}
+	public String getBirthday()
+	{
+		return _birthday;
+	}
+	
+	/*				SETTERS				*/
+	
+	public void setName(String name)
+	{
+		_name = name;
+	}
+	public void setHouse(House house)
+	{
+		_house = house;
+	}
+	public void setBloodStatus(BloodStatus bloodStatus)
+	{
+		_bloodStatus = bloodStatus;
+	}
+	public void setSchool(School school)
+	{
+		_school = school;
+	}
+	public void setBirthday(String birthday)
+	{
+		_birthday = birthday;
+	}
+	
 }

@@ -1,69 +1,117 @@
 package entities;
+
 import java.util.*;
+
 public class House {
+	private String _name;
+	private School _school;
+	private Vector<Student> _students;
+	private Professor _headTeacher;
+	private ArrayList<String> _qualities;
+	private Map<Integer, Student> _prefects;
+	
+	/*			CONSTRUCTORS			*/
+	
+	public House(String name, School school, Vector<Student> students, Professor headTeacher, 
+			ArrayList<String> qualities, Map<Integer, Student> prefects)
+	{
+		
+		_name = name;
+		_school = school;
+		_students = students;
+		_headTeacher = headTeacher;
+		_qualities = qualities;
+		_prefects = prefects;
+		
+	}
+	
+	public House(String name, School school)
+	{
+		this(name, school, new Vector<Student>(), null, new ArrayList<String>(), 
+				new TreeMap<Integer, Student>());
+	}
+	public House(String name)
+	{
+		this(name, null, new Vector<Student>(), null, new ArrayList<String>(), 
+				new TreeMap<Integer, Student>());
+	}
+	public House()
+	{
+		this("", null, new Vector<Student>(), null, new ArrayList<String>(), 
+				new TreeMap<Integer, Student>());
+	}
+	
+	
+	/*				GETTERS				*/
+	
+	public String getName()
+	{
+		return _name;
+	}
+	public School getSchool()
+	{
+		return _school;
+	}
+	public Vector<Student> getStudents()
+	{
+		return _students;
+	}
+	public Professor getHeadTeacher()
+	{
+		return _headTeacher;
+	}
+	public ArrayList<String> getQualities()
+	{
+		return _qualities;
+	}
+	public Map<Integer, Student> getPrefects()
+	{
+		return _prefects;
+	}
+	
+	/*				SETTERS				*/
+	
+	public void setName(String name)
+	{
+		_name = name;
+	}
+	public void setSchool(School school)
+	{
+		_school = school;
+	}
+	public void setStudents(Vector<Student> students)
+	{
+		_students = students;
+	}
+	public void setHeadTeacher(Professor headTeacher)
+	{
+		_headTeacher = headTeacher;
+	}
+	public void setQualities(ArrayList<String> qualities)
+	{
+		_qualities = qualities;
+	}
+	public void setPrefects(Map<Integer, Student> prefects)
+	{
+		_prefects = prefects;
+	}
+	
+	/*			HELPER METHODS			*/
+	
+	public String toString()
+	{
+		String temp = "";
+		
+		temp += "Name		: " + _name + '\n' +
+				"Prefects	: " + '\n';
+		
+		for(int i=0; i<_prefects.size(); i++)
+		{
+			temp += _prefects.entrySet().toString();
+		}
+				
+		return temp;
+	}
 
-	private String name;
-	private School school;
-	private Vector<Student> students;
-	private Professor headTeacher;
-	private ArrayList<String> qualities;
-	private Map<Integer ,Student> perfects;
-	public House(String _name)
-	{
-		name = _name;
-		school = null;
-		students = null;
-		headTecher = null;
-		qualities = null;
-		perfects = null;
-	}
-	public House(String _name , School _school)
 
-	{
-		name = _name;
-		school = _school;
-		students = null;
-		headTecher = null;
-		qualities = null;
-		perfects = null;
-	}
-	public House(String _name , School _school , Vector<Student> _students , Professor _headTeacher,ArrayList<String> _qualities , Map<Integer , Student> _perfects)
-	{
-		name = _name;
-		school = _school;
-		students = _students;
-		headTecher = _headTeacher;
-		qualities = _qualities;
-		perfects = _perfects;
-	}
-	public House(String _name , School _school , Vector<Student> _students , Professor _headTeacher,ArrayList<String> _qualities)
-	{
-		name = _name;
-		school = _school;
-		students = _students;
-		headTecher = _headTeacher;
-		qualities = _qualities;
-		perfects = null;
-	}
-	public House(String _name , School _school , Vector<Student> _students , Professor _headTeacher)
-	{
-		name = _name;
-		school = _school;
-		students = _students;
-		headTecher = _headTeacher;
-		qualities = null;
-		perfects = null;
-	}
-	public String getName() { return name;}
-	public void setName(String _name) { name = _name; }
-	public School getSchool() { return school ;}
-	public void setSchool(School _school) { school = _school;}
-	public Vector<Student> getStudents() { return students;}
-	public void setStudnets( Vector<Studnet> _students) { students = _students ;}
-	public Professor getProfessor() { return headTeacher; }
-	public void setProfessor(Professor _newHead) { headTeacher = _newHead ;}
-	public ArrayList<String> getQualities() { return qualities;}
-	public void setQualities(ArrayList<String> _qualities) { qualities = _qualities;}
-	public Map<Integre,Student> getPerfects() { return perfects; }
-	public void setPerfects(Map<Integre,Student> _perfects) { perfects = _perfects ;}
 }
